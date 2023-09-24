@@ -72,6 +72,7 @@
 * {
     padding: 0px;
     margin: 0px;
+    box-sizing: border-box;
 }
 body {
     background-color: #f1f3f6;
@@ -86,8 +87,8 @@ body {
     height: 48px;
 }
 .nav-input {
-    width: 380px;
-    height: 20px;
+    width: 480px;
+    height: 40px;
     padding: 10px 12px;
     border-radius: 5px;
     border-color: white;
@@ -170,11 +171,6 @@ body {
 
 
 
-
-
-
-
-
 .container{
     background: white;
     width: 25%;
@@ -213,3 +209,77 @@ body {
     border: none;
     cursor: pointer;
 } 
+
+
+
+:root
+{
+    --blue:rgb(72 175 255);
+}
+
+
+
+.specs{
+    margin-top: 10px;
+    font-size: 1rem;
+    padding-left: 20px;
+}
+
+
+
+
+.specs>h3{
+    color: black;
+}
+.specs>h3>span{
+    font-weight: 100;
+}
+.cart-btn2{
+    padding: 10px 20px;
+    background-color: rgb(72 175 255);
+    color: #FFFFFF;
+    font-weight: 200;
+    margin: 20px 0px 10px 0px;
+    border-radius: 20px;
+    border: none;
+    cursor: pointer;
+}
+.cart-btn3{
+    padding:  0px 10px;
+    margin: 10px;
+    background-color:white;
+    color: black;
+    font-size: 0.8rem;
+    border: none;
+    cursor: pointer;
+}
+.check-btn{
+    margin-top: 50px;
+    margin-bottom: 20px;
+    padding: 10px 20px;
+    background-color: var(--blue);
+    border: none;
+    color: #ffffff;
+    font-size: 1.5rem;
+    border-radius: 30px;    
+    cursor: pointer;
+    border: 2px solid transparent;
+}
+.btn-div{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.head-one{
+    margin-top: 30px;
+    margin-bottom: 20px;
+    text-align: center;
+    font-size: 3rem;
+    font-weight: 900;
+    color: black;
+}
+#cart_div{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}

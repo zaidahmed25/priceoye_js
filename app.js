@@ -6,7 +6,7 @@ const phones = [
         ram: 12,
         rom: 265,
         camera: "12 MP",
-        price : 599999 ,
+        price: 599999,
     },
     {
         brand: "Xiomi",
@@ -15,7 +15,7 @@ const phones = [
         ram: 12,
         rom: 256,
         camera: "50 MP",
-        price: 208999 ,
+        price: 208999,
     },
     {
         brand: "Infinix",
@@ -24,7 +24,7 @@ const phones = [
         ram: 8,
         rom: 256,
         camera: "108 MP",
-        price : 54999 ,
+        price: 54999,
     },
     {
         brand: "Tecno",
@@ -33,7 +33,7 @@ const phones = [
         ram: 8,
         rom: 256,
         camera: "64 MP",
-        price: 29999 ,
+        price: 29999,
     },
     {
         brand: "Apple Iphone",
@@ -42,7 +42,7 @@ const phones = [
         ram: 6,
         rom: 512,
         camera: "48 MP",
-        price: 565999 ,
+        price: 565999,
     },
     {
         brand: "Oppo",
@@ -51,7 +51,7 @@ const phones = [
         ram: 12,
         rom: 256,
         camera: "64 MP",
-        price: 119999 ,
+        price: 119999,
     },
     {
         brand: "Vivo",
@@ -60,7 +60,7 @@ const phones = [
         ram: 12,
         rom: 256,
         camera: "50 MP",
-        price: 169999 ,
+        price: 169999,
     },
 ];
 
@@ -85,20 +85,38 @@ for (i = 0; i < phones.length; i++) {
 
 
 
-const ArrayOfCart = []
+const ArrayOfCart = [];
 function AddToCart(index) {
+
     if (ArrayOfCart.includes(phones[index]) === true) {
-        console.log('Item Agai Hai');
-    }
-    else {
+        for (let i = 0; i < ArrayOfCart.length; i++) {
+            if (ArrayOfCart[i] === phones[index]) {
+                phones[index].quantity += 1;
+            }
+        }
+        Swal.fire({
+            position: "top-end",
+            icon: "success",
+            title: "Item Quantity Increased",
+            showConfirmButton: false,
+            timer: 1500,
+        });
+    } else {
+        phones[index].quantity = 1;
         ArrayOfCart.push(phones[index]);
         Swal.fire({
-            position: 'top-end',
-            icon: 'success',
-            title: 'Your Item Added',
+            position: "top-end",
+            icon: "success",
+            title: "Your Item Is Added",
             showConfirmButton: false,
-            timer: 1500
-        })
+            timer: 1500,
+        });
+        console.log("cartArr:", ArrayOfCart);
     }
-    console.log('cartArr:', ArrayOfCart);
+}
+
+function GoToCart() {
+    const items = JSON.stringify(ArrayOfCart)
+    localStorage.setItem('cartarr', items)
+    window.location = "cart.html";
 }

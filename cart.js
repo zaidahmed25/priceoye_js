@@ -1,5 +1,6 @@
 const cartdiv = document.querySelector("#cart_div")
 const totalAmounts = document.querySelector('#total-amount');
+const noitem = document.querySelector("#noitem")
 const data = localStorage.getItem('cartarr')
 const obj_data = JSON.parse(data)
 render()
@@ -24,10 +25,10 @@ function render() {
             <button class="cart-btn3" onclick="Decreased(${i})"><h3>-</h3></button>${obj_data[i].quantity}<button class="cart-btn3"  onclick="Increased(${i})"><h3>+</h3></button>
             <button class="cart-btn2" onclick="Delete(${i})">Delete</button>
             </div>`
-            totalAmounts.innerHTML = `Total Amount ${totalAmount}`
+            totalAmounts.innerHTML = `<span class="totalamount">Total Amount ${totalAmount}</span>`
         }
     } else {
-        div.innerHTML = '<h2 class="itemnotfound-text">No item Found..</h2>'
+        noitem.innerHTML = '<h3 class="itemnotfound-text">Items Not Found..</h3>'
     }
 
 }

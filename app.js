@@ -84,8 +84,10 @@ for (i = 0; i < phones.length; i++) {
 }
 
 
+const recieveddata = localStorage.getItem('cartarr')
+const jsondata = JSON.parse(recieveddata)
 
-const ArrayOfCart = [];
+const ArrayOfCart = [...jsondata];
 function AddToCart(index) {
 
     if (ArrayOfCart.includes(phones[index]) === true) {
